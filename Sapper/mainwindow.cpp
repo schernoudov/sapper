@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
 	delete ui;
+
+	delete presenter;
 }
 
 void MainWindow::on_actionNew_Game_triggered()

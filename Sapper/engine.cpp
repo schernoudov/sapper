@@ -1,18 +1,33 @@
-#include "engine.h"
+#include <engine.h>
+#include <minefield.h>
 
-bool** Engine::create_state() {
-
-}
-
-void Engine::update_state() {
+Engine::Engine()
+{
 
 }
 
-void Engine::initialize() {
+bool** Engine::create_state()
+{
+	return NULL;
+}
 
+void Engine::update_state()
+{
+
+}
+
+void Engine::initialize()
+{
+	minefield = new Minefield(30, 16);
+	minefield->initialize();
+}
+
+bool** Engine::calculate_state()
+{
+	return NULL;
 }
 
 Engine::~Engine()
 {
-
+	delete [] minefield;
 }

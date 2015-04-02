@@ -14,13 +14,18 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    engineimpl.cpp \
+    engine.cpp \
     presenter.cpp \
-    engine.cpp
+    minefield.cpp \
+    square.cpp
+
 
 HEADERS  += mainwindow.h \
     engine.h \
-    engineimpl.h \
-    presenter.h
+    presenter.h \
+    minefield.h \
+    square.h
 
 FORMS    += mainwindow.ui
+
+INCLUDEPATH += .

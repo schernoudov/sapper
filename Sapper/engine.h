@@ -1,20 +1,24 @@
-#ifndef ENGINE_H
-#define ENGINE_H
+#ifndef ENGINEIMPL_H
+#define ENGINEIMPL_H
+
+#include <stddef.h>
+#include <engine.h>
+#include <minefield.h>
 
 class Engine
 {
 	public:
 
-		virtual void initialize();
-
-		virtual bool** create_state();
-
-		virtual void update_state();
-
+		Engine();
+		void initialize();
+		bool** create_state();
+		void update_state();
 		virtual ~Engine();
-	private:
-		bool** state;
 
+	private:
+
+		Minefield* minefield;
+		bool** calculate_state();
 };
 
-#endif // ENGINE_H
+#endif // ENGINEIMPL_H
