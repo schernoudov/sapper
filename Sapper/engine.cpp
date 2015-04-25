@@ -6,9 +6,9 @@ Engine::Engine()
 
 }
 
-bool** Engine::create_state()
+Minefield* Engine::create_state()
 {
-	return NULL;
+	return minefield->placeMines();
 }
 
 void Engine::update_state()
@@ -18,7 +18,7 @@ void Engine::update_state()
 
 void Engine::initialize()
 {
-	minefield = new Minefield(30, 16);
+	minefield = new Minefield(30, 16, 99);
 	minefield->initialize();
 }
 
@@ -29,5 +29,5 @@ bool** Engine::calculate_state()
 
 Engine::~Engine()
 {
-	delete [] minefield;
+	delete minefield;
 }

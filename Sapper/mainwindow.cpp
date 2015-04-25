@@ -11,17 +11,21 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+	delete engine;
 	delete ui;
-
-	delete presenter;
 }
 
 void MainWindow::on_actionNew_Game_triggered()
 {
-	presenter->create_new_game();
+	engine->create_state();
 }
 
-void MainWindow::set_presenter(Presenter *presenter)
+void MainWindow::set_engine(Engine *engine)
 {
-	this->presenter = presenter;
+	this->engine = engine;
+}
+
+void MainWindow::initialize()
+{
+	engine->initialize();
 }

@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <presenter.h>
+#include <engine.h>
 
 namespace Ui {
 	class MainWindow;
@@ -18,7 +18,9 @@ class MainWindow : public QMainWindow
 
 		~MainWindow();
 
-		void set_presenter(Presenter *presenter);
+		void set_engine(Engine *engine);
+
+		void initialize();
 
 	private slots:
 		void on_actionNew_Game_triggered();
@@ -27,7 +29,7 @@ class MainWindow : public QMainWindow
 
 		Ui::MainWindow *ui;
 
-		Presenter *presenter;
+		Engine *engine;
 };
 
 #endif // MAINWINDOW_H

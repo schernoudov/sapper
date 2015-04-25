@@ -2,6 +2,9 @@
 
 Square::Square()
 {
+	mined = false;
+	opened = false;
+	near_mines_quantity = 0;
 }
 
 Square::~Square()
@@ -29,12 +32,19 @@ void Square::set_opened(bool opened)
 	this->opened = opened;
 }
 
-unsigned char Square::get_near_mines_quantity()
+unsigned short Square::get_near_mines_quantity()
 {
 	return near_mines_quantity;
 }
 
-unsigned char Square::set_near_mines_quantity(unsigned char quantity)
+void Square::set_near_mines_quantity(unsigned short quantity)
 {
 	this->near_mines_quantity = quantity;
+}
+
+void Square::reset()
+{
+	mined = false;
+	opened = false;
+	near_mines_quantity = 0;
 }

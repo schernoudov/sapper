@@ -10,13 +10,13 @@ class Square
 		void set_mined(bool mined);
 		bool is_opened();
 		void set_opened(bool opened);
-		unsigned char get_near_mines_quantity();
-		unsigned char set_near_mines_quantity(unsigned char quantity);
-
+		unsigned short get_near_mines_quantity();
+		void set_near_mines_quantity(unsigned short quantity);
+		void reset();
 	private:
 		bool mined;
 		bool opened;
-		unsigned char near_mines_quantity;
+		unsigned short near_mines_quantity;
 };
 
 #endif // SQUARE_H

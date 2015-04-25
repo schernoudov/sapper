@@ -15,14 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     engine.cpp \
-    presenter.cpp \
     minefield.cpp \
     square.cpp
 
 
 HEADERS  += mainwindow.h \
     engine.h \
-    presenter.h \
     minefield.h \
     square.h
 

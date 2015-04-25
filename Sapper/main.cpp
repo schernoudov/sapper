@@ -1,14 +1,15 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <presenter.h>
+#include <engine.h>
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 	MainWindow w;
 
-	Presenter *presenter = new Presenter();
-	w.set_presenter(presenter);
+	Engine *engine = new Engine();
+	w.set_engine(engine);
+	w.initialize();
 	w.show();
 
 	return a.exec();

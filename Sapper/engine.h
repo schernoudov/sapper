@@ -11,7 +11,7 @@ class Engine
 
 		Engine();
 		void initialize();
-		bool** create_state();
+		Minefield* create_state();
 		void update_state();
 		virtual ~Engine();
 
