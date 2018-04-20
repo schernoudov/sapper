@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QPushButton"
+#include <QPair>
 
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
@@ -26,12 +27,26 @@ void MainWindow::onSquareButtonClicked()
 
     int index = ui->minefieldLayout->indexOf(sender);
 
-    Q_ASSERT(index >= 0);
-
     int rs,cs;
     QPair<int, int> position = qMakePair(-1,-1);
 
     ui->minefieldLayout->getItemPosition(index, &position.first, &position.second, &rs, &cs);
+
+    if (this->engine->openSquare(&position)) {
+        this->drawMinefield();
+    } else {
+        this->openMinefield();
+    }
+}
+
+void MainWindow::drawMinefield()
+{
+
+}
+
+void MainWindow::openMinefield()
+{
+
 }
 
 void MainWindow::setEngine(Engine *engine)

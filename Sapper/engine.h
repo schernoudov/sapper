@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <engine.h>
 #include <minefield.h>
+#include <QPair>
 
 class Engine
 {
@@ -22,6 +23,8 @@ class Engine
         Minefield * placeMines();
 
         void resetSquares();
+
+        bool openSquare(QPair<int, int> *position);
 private:
 
 		Minefield* minefield;

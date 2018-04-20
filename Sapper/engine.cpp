@@ -1,6 +1,7 @@
 #include <engine.h>
 #include <minefield.h>
 #include <square.h>
+#include <QPair>
 
 Engine::Engine()
 {
@@ -54,6 +55,19 @@ void Engine::resetSquares()
             Square * square = minefield->getSquare(j, i);
             square->reset();
         }
+    }
+}
+
+bool Engine::openSquare(QPair<int, int> *position)
+{
+
+    Square *square = this->minefield->getSquare(position->first, position->second);
+    square->setOpened(true);
+
+    if (!square->isMined()) {
+        return true;
+    } else {
+        return false;
     }
 }
 

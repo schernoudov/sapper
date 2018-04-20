@@ -36,6 +36,10 @@ class MainWindow : public QMainWindow
         Engine *engine;
 
         QPushButton *createSquareButton(QRect *defaultGeometry);
+
+        void drawMinefield();
+
+        void openMinefield();
 };
 
 #endif // MAINWINDOW_H

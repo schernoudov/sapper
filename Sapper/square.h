@@ -4,19 +4,31 @@
 class Square
 {
 	public:
+
 		Square();
+
 		~Square();
-		bool is_mined();
+
+		bool isMined();
+
         void setMined(bool mined);
-		bool is_opened();
-		void set_opened(bool opened);
-		unsigned short get_near_mines_quantity();
-		void set_near_mines_quantity(unsigned short quantity);
+
+		bool isOpened();
+
+		void setOpened(bool opened);
+
+		unsigned short getNearMinesQuantity();
+
+		void setNearMinesQuantity(unsigned short quantity);
+
 		void reset();
 	private:
+
 		bool mined;
+
 		bool opened;
-		unsigned short near_mines_quantity;
+
+		unsigned short nearMinesQuantity;
 };
 
 #endif // SQUARE_H
