@@ -14,12 +14,12 @@ MainWindow::~MainWindow()
 	delete ui;
 }
 
-void MainWindow::on_actionNew_Game_triggered()
+void MainWindow::onActionNewGameTriggered()
 {
 
 }
 
-void MainWindow::set_engine(Engine *engine)
+void MainWindow::setEngine(Engine *engine)
 {
 	this->engine = engine;
 }

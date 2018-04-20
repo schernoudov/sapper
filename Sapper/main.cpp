@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 	MainWindow w;
 
 	Engine *engine = new Engine();
-	w.set_engine(engine);
+    w.setEngine(engine);
 	w.initialize();
 	w.show();
 
