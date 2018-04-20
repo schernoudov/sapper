@@ -6,24 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>651</width>
-    <height>449</height>
+    <width>640</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Sapper</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="gridLayoutWidget">
+   <widget class="QWidget" name="minefieldWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>30</y>
-      <width>561</width>
-      <height>341</height>
+      <x>30</x>
+      <y>20</y>
+      <width>571</width>
+      <height>371</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="minefield"/>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <layout class="QGridLayout" name="minefieldLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="spacing">
+        <number>1</number>
+       </property>
+      </layout>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -31,8 +42,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>651</width>
-     <height>21</height>
+     <width>640</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuGame">

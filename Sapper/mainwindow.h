@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <engine.h>
+#include <QPushButton>
 
 namespace Ui {
 	class MainWindow;
@@ -26,11 +27,15 @@ class MainWindow : public QMainWindow
 
         void onActionNewGameTriggered();
 
+        void onSquareButtonClicked();
+
 	private:
 
 		Ui::MainWindow *ui;
 
-		Engine *engine;
+        Engine *engine;
+
+        QPushButton *createSquareButton(QRect *defaultGeometry);
 };
 
 #endif // MAINWINDOW_H
