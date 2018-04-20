@@ -10,15 +10,23 @@ class Engine
 	public:
 
 		Engine();
-		void initialize();
-		Minefield* create_state();
-		void update_state();
+
 		virtual ~Engine();
 
-	private:
+        void initialize();
+
+        Minefield * getMinefield();
+
+        void setMinefield(Minefield *minefield);
+
+        Minefield * placeMines();
+
+        void resetSquares();
+private:
 
 		Minefield* minefield;
-		bool** calculate_state();
+
+        int randomNumber(unsigned int min, unsigned int max);
 };
 
 #endif // ENGINEIMPL_H

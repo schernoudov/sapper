@@ -7,7 +7,7 @@ class Square
 		Square();
 		~Square();
 		bool is_mined();
-		void set_mined(bool mined);
+        void setMined(bool mined);
 		bool is_opened();
 		void set_opened(bool opened);
 		unsigned short get_near_mines_quantity();

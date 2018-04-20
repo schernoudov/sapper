@@ -17,7 +17,7 @@ bool Square::is_mined()
 	return mined;
 }
 
-void Square::set_mined(bool mined)
+void Square::setMined(bool mined)
 {
 	this->mined = mined;
 }

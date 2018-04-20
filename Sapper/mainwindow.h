@@ -18,12 +18,13 @@ class MainWindow : public QMainWindow
 
 		~MainWindow();
 
-		void set_engine(Engine *engine);
+        void setEngine(Engine *engine);
 
 		void initialize();
 
 	private slots:
-		void on_actionNew_Game_triggered();
+
+        void onActionNewGameTriggered();
 
 	private:
 
