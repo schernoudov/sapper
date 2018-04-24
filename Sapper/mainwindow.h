@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <engine.h>
-#include <QPushButton>
+#include <squarecontrol.h>
 
 namespace Ui {
 	class MainWindow;
@@ -27,7 +27,11 @@ class MainWindow : public QMainWindow
 
         void onActionNewGameTriggered();
 
-        void onSquareButtonClicked();
+        void onSquareButtonLeftClicked();
+
+        void onSquareButtonRightClicked();
+
+        void onSquareButtonMutuallyClicked();
 
 	private:
 
@@ -35,7 +39,7 @@ class MainWindow : public QMainWindow
 
         Engine *engine;
 
-        QPushButton *createSquareButton(QRect *defaultGeometry);
+        SquareControl *createSquareButton(QRect *defaultGeometry);
 
         void drawMinefield();
 

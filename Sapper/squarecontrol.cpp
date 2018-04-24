@@ -1,6 +1,4 @@
 #include "squarecontrol.h"
-#include <QDateTime>
-#include <QDebug>
 
 SquareControl::SquareControl(QWidget *parent) : QPushButton(parent)
 {
@@ -8,19 +6,25 @@ SquareControl::SquareControl(QWidget *parent) : QPushButton(parent)
 
 void SquareControl::mousePressEvent(QMouseEvent *e)
 {
-
-    if((e->buttons() & Qt::RightButton) && (e->buttons() & Qt::LeftButton))
-    {
-        emit doubleClicked();
+    if(e->button() & Qt::LeftButton) {
+        this->state += 1;
+    } else if (e->button() & Qt::RightButton) {
+        this->state += 2;
     }
 
-    if (e->button() == Qt::RightButton)
-    {
+    QPushButton::mousePressEvent(e);
+}
+
+void SquareControl::mouseReleaseEvent(QMouseEvent *e)
+{
+    if (this->state == 3) {
+        this->state = 0;
+        emit mutuallyClicked();
+    } else if (this->state == 2) {
+        this->state = 0;
         emit rightClicked();
-    }
-
-    if (e->button() == Qt::LeftButton)
-    {
-        QPushButton::mousePressEvent(e);
+    } else {
+        this->state = 0;
+        QPushButton::mouseReleaseEvent(e);
     }
 }

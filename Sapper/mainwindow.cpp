@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "QPushButton"
+#include "squarecontrol.h"
 #include <QPair>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -21,9 +21,9 @@ void MainWindow::onActionNewGameTriggered()
     engine->placeMines();
 }
 
-void MainWindow::onSquareButtonClicked()
+void MainWindow::onSquareButtonLeftClicked()
 {
-    QPushButton* sender = qobject_cast<QPushButton*>(QObject::sender());
+    SquareControl* sender = qobject_cast<SquareControl*>(QObject::sender());
 
     int index = ui->minefieldLayout->indexOf(sender);
 
@@ -37,6 +37,16 @@ void MainWindow::onSquareButtonClicked()
     } else {
         this->openMinefield();
     }
+}
+
+void MainWindow::onSquareButtonRightClicked()
+{
+    printf("right");
+}
+
+void MainWindow::onSquareButtonMutuallyClicked()
+{
+    printf("mutually");
 }
 
 void MainWindow::drawMinefield()
@@ -54,12 +64,14 @@ void MainWindow::setEngine(Engine *engine)
 	this->engine = engine;
 }
 
-QPushButton * MainWindow::createSquareButton(QRect *defaultGeometry) {
+SquareControl * MainWindow::createSquareButton(QRect *defaultGeometry) {
 
-    QPushButton *button = new QPushButton();
+    SquareControl *button = new SquareControl();
     button->setGeometry(*defaultGeometry);
 
-    QObject::connect(button, SIGNAL(clicked()), this, SLOT(onSquareButtonClicked()));
+    QObject::connect(button, SIGNAL(clicked()), this, SLOT(onSquareButtonLeftClicked()));
+    QObject::connect(button, SIGNAL(rightClicked()), this, SLOT(onSquareButtonRightClicked()));
+    QObject::connect(button, SIGNAL(mutuallyClicked()), this, SLOT(onSquareButtonMutuallyClicked()));
 
     return button;
 }

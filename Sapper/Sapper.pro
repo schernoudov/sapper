@@ -16,13 +16,15 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     engine.cpp \
     minefield.cpp \
-    square.cpp
+    square.cpp \
+    squarecontrol.cpp
 
 
 HEADERS  += mainwindow.h \
     engine.h \
     minefield.h \
-    square.h
+    square.h \
+    squarecontrol.h
 
 FORMS    += mainwindow.ui
 
